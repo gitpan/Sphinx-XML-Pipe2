@@ -81,34 +81,9 @@ Sphinx::XML::Pipe2 - generates xml to feed xmlpipe2 of Sphinx Search
 
 version 0.001
 
-=head1 METHODS
-
-=head2 attr($name, $type, $bits, $default)
-
-Declare document attribute. $name and $type is mandatory.
-
-=head2 field($name, $attr)
-
-Declare document field. $name is mandatory.
-
-=head2 add($id, @attr, @field)
-
-Add document. $id - must be integer, @attr and @field must be be in declaration order.
-
-=head2 xml
-
-Returns XML data suitable for xmlpipe2 data source.
-
-=head2 process
-
-Returns XML::LibXML::Document
-
-=head1 NOTICE
-
-Experimental state
-
 =head1 SYNOPSIS
-Example script which creates XML data for L<Sphinx Search xmlpipe2 data source|http://sphinxsearch.com/docs/current.html#xmlpipe2> of some documents in directories specified as script arguments 
+
+Example script which creates XML data for Sphinx Search L<xmlpipe2 data source|http://sphinxsearch.com/docs/current.html#xmlpipe2> of some documents in directories specified as script arguments 
 
      use v5.14;
      use Sphinx::XML::Pipe2;
@@ -139,6 +114,32 @@ Example script which creates XML data for L<Sphinx Search xmlpipe2 data source|h
     }, @ARGV);
     
     print $p->xml;
+
+=head1 METHODS
+
+=head2 attr($name, $type, $bits, $default)
+
+Declare document attribute. $name and $type is mandatory.
+
+=head2 field($name, $attr)
+
+Declare document field. $name is mandatory.
+
+=head2 add($id, @attr, @field)
+
+Add document. $id - must be integer, @attr and @field must be be in declaration order.
+
+=head2 xml
+
+Returns XML data suitable for xmlpipe2 data source.
+
+=head2 process
+
+Returns XML::LibXML::Document
+
+=head1 NOTICE
+
+Experimental state
 
 =head1 SEE ALSO
 

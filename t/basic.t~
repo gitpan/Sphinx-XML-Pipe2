@@ -1,0 +1,7 @@
+#perl
+use Test::More tests => 1;
+use Sphinx::XML::Pipe2;
+
+my $p = Sphinx::XML::Pipe2->new;
+$p->attr('type', 'int');
+$p->attr('type', 'str2ordianal');

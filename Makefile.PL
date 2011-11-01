@@ -11,7 +11,9 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "generates xml to feed xmlpipe2 of Sphinx Search",
   "AUTHOR" => "Yegor Korablev <egor\@cpan.org>",
-  "BUILD_REQUIRES" => {},
+  "BUILD_REQUIRES" => {
+    "Test::More" => 0
+  },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -26,7 +28,7 @@ my %WriteMakefileArgs = (
   },
   "VERSION" => "0.001",
   "test" => {
-    "TESTS" => ""
+    "TESTS" => "t/*.t"
   }
 );
 

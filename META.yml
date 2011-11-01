@@ -2,7 +2,8 @@
 abstract: 'generates xml to feed xmlpipe2 of Sphinx Search'
 author:
   - 'Yegor Korablev <egor@cpan.org>'
-build_requires: {}
+build_requires:
+  Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
