@@ -79,7 +79,7 @@ Sphinx::XML::Pipe2 - generates xml to feed xmlpipe2 of Sphinx Search
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -105,10 +105,10 @@ Example script which creates XML data for Sphinx Search L<xmlpipe2 data source|h
         if (-f -r $file && (my $size = -s $file) && $file =~ /\.(html?|txt|rtf)?$/i) {
             $p->add( 
                 $i, # document id
-                $size, # attributes in declaration order
-                lc($1),
-                do { local( @ARGV, $/ ) = $name; <> }, # fields in declaration order 
-                $File::Find::name
+                $size, # attributes in declaration order, i.e. 'size'
+                lc($1), # 'type'
+                do { local( @ARGV, $/ ) = $name; <> }, # then fields in declaration order, i.e. 'content' 
+                $File::Find::name # 'path'
             );
         }
     }, @ARGV);
